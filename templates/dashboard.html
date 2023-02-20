@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+{% block body%}
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url( {{url_for('static',filename='assets/img/home-bg.jpg')}})">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                            <h1>Admin Panel</h1>
+                            <span class="subheading">Manage Your Post And Change Them</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content-->
+        
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <h1>Basic Actions</h1>
+                   
+                        <a href="/edit/0"><button class="btn btn-primary text-uppercase" >Add A New Post</button></a>
+                        <a href="/logout"><button class="btn btn-primary text-uppercase" >LogOut</button></a>
+
+                      
+
+                
+                    <p>WE WILL Upload A FILE UPLOADER</P>
+
+                        <form action="/uploader" method="POST" class="fileuploader" enctype="multipart/form-data">
+                            
+                            <fieldset>
+                                <legend>FileUploader:-</legend>
+                                <input type="file" name="file1" required>
+                                <div class="filesubmit" ><button   type="submit" class="btn btn-primary text-uppercase">Submit</button></div>
+                            </fieldset>
+                        </form>
+                            
+                    <br>
+                    <h1>Edit Post</h1>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>sr_no</th>
+                                <th>Title</th>
+                                <th>Date</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for post in posts %}
+                            <tr>
+                            <td>{{post.sr_no}}</td>
+                            <td>{{post.title}}</td>
+                            <td>{{post.date}}</td>
+                            <td><a href="/edit/{{post.sr_no}}"><button class="btn btn-primary text-uppercase" >Edit</button></a></td>
+                            <td><a href="/delete/{{post.sr_no}}"<button class="btn btn-primary text-uppercase" >Delete</button></a></td>
+                            </tr>
+                            {% endfor %}
+                    
+                          
+                        </tbody>
+                      </table>
+                    <!-- Post preview-->
+                <!-- Pager-->
+                    <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="#!">Older Posts →</a></div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer-->
+        
+        {% endblock %}

@@ -1,0 +1,21 @@
+{
+    "params":
+    {
+        "local_server":"True",
+        "local_uri":"mysql://root:@localhost/kartik",
+        "prod_uri":"mysql://root:@localhost/kartik",
+        "fd_url":"https://facebook.com",
+        "tw_url":"https://twitter.com",
+        "gt_url":"https://github.com",
+        "text_logo":"Kartik Coding Tunder",
+        "tag_line":"this is the best blog in the world ",
+        "gmail-user":"kartikprajapati26122004@gmail.com",
+        "gmail-password":"gcrjulnsxtqlgeqh",
+        "about_text":"this is the content of the about text",
+        "no_of_post":4,
+        "login_image":"loginlogo.svg",
+        "admin_user":"kartikprajapati",
+        "admin_password":"kartik1234",
+        "upload_location":"C:\\Users\\ADMIN\\OneDrive\\Documents\\flask2\\static\\assets\\img"
+    }
+}
